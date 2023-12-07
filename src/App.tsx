@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  createBrowserRouter, createRoutesFromElements,
+  RouterProvider, Route, Outlet
+} from 'react-router-dom';
+
+// CSS
+import './css/App.css';
+import './css/Home.css';
+import './css/Header.css';
+import './css/Footer.css';
+
+// Pages
+import Home from './pages/Home';
+
+// Components
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+
+/**
+ * TODO: 
+ * - Home Page - 
+ * - Header -
+ * - Footer - 
+ * - Color Pallete -
+ * - Font Style -
+ * - 
+ */
 
 function App() {
+  const Root = () => {
+    return <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  }
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path="/*" element={<Home />} />
+      </Route>
+    )
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page-container">
+      <RouterProvider router={router} />
     </div>
   );
 }

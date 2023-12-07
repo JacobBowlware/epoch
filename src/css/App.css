@@ -1,0 +1,53 @@
+:root {
+  --var-color-primary: #153243;
+  --var-color-secondary: #F4F9E9;
+  --var-color-accent: #284B63;
+  --var-color-light: #EEF0EB;
+}
+
+/* Default Page Styles */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page-section {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-section {
+    padding: 0 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-section {
+    padding: 0 6rem;
+  }
+}
+
+/* Default Button Styles */
