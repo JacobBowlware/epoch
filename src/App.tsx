@@ -8,9 +8,14 @@ import './css/App.css';
 import './css/Home.css';
 import './css/Header.css';
 import './css/Footer.css';
+import './css/DateCard.css';
+import './css/Instructions.css';
+import './css/Play.css';
 
 // Pages
 import Home from './pages/Home';
+import Play from './pages/Play';
+import Instructions from './pages/Instructions';
 
 // Components
 import Header from './components/common/Header';
@@ -40,6 +45,8 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/*" element={<Home />} />
+        <Route path="/play" element={<Play />} />
+        <Route path="/instructions" element={<Instructions />} />
       </Route>
     )
   )
